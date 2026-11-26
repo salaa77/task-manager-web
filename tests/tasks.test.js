@@ -47,3 +47,9 @@ test("addTask retire les espaces autour du titre", function () {
  addTask(tasks, "  Réviser la CI  ");
  assert.strictEqual(tasks[4].title, "Réviser la CI");
 });
+
+test("addTask conserve les espaces entre les mots", function () {
+  const tasks = defaultTasks();
+  addTask(tasks, "  Préparer   le TP  ");
+  assert.strictEqual(tasks[4].title, "Préparer   le TP");
+});
